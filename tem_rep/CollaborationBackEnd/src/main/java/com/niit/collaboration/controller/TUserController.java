@@ -32,8 +32,7 @@ public class TUserController {
 
 	@Autowired
 	TUserDAO tUserDAO;
-
-	// http://locahost:8080/collaboration/tusers
+	
 	@RequestMapping(value = "/tusers", method = RequestMethod.GET)
 	public ResponseEntity<List<UserDetails>> getAllUsers() {
 		log.debug("Starting of the method getAllUsers" );
@@ -47,7 +46,7 @@ public class TUserController {
 		return new ResponseEntity<List<UserDetails>>(users, HttpStatus.OK);
 	}
 
-	// http://locahost:8080/collaboration/tuser/srinivas
+	
 	@RequestMapping(value = "/tuser/{id}", method = RequestMethod.GET)
 	public ResponseEntity<UserDetails> getUserDetails(@PathVariable("id") String id) {
 		log.debug("Starting of the method getUserDetails" );
